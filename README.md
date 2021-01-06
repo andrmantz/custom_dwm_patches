@@ -10,7 +10,9 @@ Adds keybining to change focused to the first empty tag available or move focuse
 Adds keybindings to shift view to the next or previous available tag.
 
 ### [Find Active App](https://github.com/andrmantz/custom_dwm_patches/tree/main/FindClient)
-Adds keybinding to shift view to the tag the **App** is active.
+Adds keybinding to shift view to the tag the **App** is active. Currently there are 2 Versions:
+* **Standard Version**: Search for the Application and if it is active, shift view to the corresponding tag.
+* **Extended Version**: Same as **Standard Version**, but in case the app is not active, it opens it in a free tab and shift view to it.
 
 ## Installation
 The main way to patch dwm is
