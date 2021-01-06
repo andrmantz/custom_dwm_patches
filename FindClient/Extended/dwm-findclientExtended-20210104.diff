@@ -8,7 +8,7 @@ index 1c0b587..063c38a 100644
  
 +static const Match matches[] = {
 +  /*   name               app_name  */
-+  {    "st",              "Terminal"       },
++  {    "st",              "st"             },
 +  { "firefox",            "Firefox"        },
 +};
 +

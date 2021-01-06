@@ -42,5 +42,5 @@ static Key keys[] = {
 [dwm-findclientV2-20210104.diff]() file and apply it via  the `patch < dwm-findclientV2-20210104.diff`
 command.
 * Otherwise, you can either download [dwm-findclientV2-20210104.diff]() file and apply it, or
-download **findclients.c**, copy it to your dwm directory and add `#include "findclients.c"` on the top
-of your **config.h** file.
+download **findclients.c**, copy it to your dwm directory ,add `#include "findclients.c"` on the top
+of your **config.h** file and create the Match array manually.
