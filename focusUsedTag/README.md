@@ -9,8 +9,8 @@ Takes as argument an **Arg** Object and acts as follows:
 * If the .i field is equal to -1, shifts the view to the first used tag on the left.
 
 ## Default Keybindings
-* **MODKEY + Shift + k** View used to the right side
-* **MODKEY + Shift + j** View used to the left side 
+* **MODKEY + Shift + k** View used tag to the right side
+* **MODKEY + Shift + j** View used tag to the left side 
 
 ## Installation
 You can either download the **focususedtag.c** file, add to your config.h `#include "focususedtag.c""`,
