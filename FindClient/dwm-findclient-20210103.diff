@@ -1,0 +1,49 @@
+diff --git a/config.def.h b/config.def.h
+index 1c0b587..491b5e2 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -84,6 +84,7 @@ static Key keys[] = {
+ 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+ 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+ 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
++	{ MODKEY,                       XK_s,      findclient,     {.v = "st"} },
+ 	TAGKEYS(                        XK_1,                      0)
+ 	TAGKEYS(                        XK_2,                      1)
+ 	TAGKEYS(                        XK_3,                      2)
+diff --git a/dwm.c b/dwm.c
+index 4465af1..ee512cc 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -165,6 +165,7 @@ static void drawbar(Monitor *m);
+ static void drawbars(void);
+ static void enternotify(XEvent *e);
+ static void expose(XEvent *e);
++static void findclient(const Arg *arg);
+ static void focus(Client *c);
+ static void focusin(XEvent *e);
+ static void focusmon(const Arg *arg);
+@@ -780,6 +781,24 @@ expose(XEvent *e)
+ 		drawbar(m);
+ }
+ 
++void
++findclient(const Arg *arg)
++{
++	if (!arg || !arg->v || !selmon->clients )
++		return;
++
++	Arg shiftit;
++	Client *c; 
++	
++	for (c=selmon->clients; c; c= c->next){
++		if (strstr(c->name, arg->v)){
++			shiftit.ui = c->tags;
++			view(&shiftit);
++			return;
++		}
++	}
++}
++
+ void
+ focus(Client *c)
+ {

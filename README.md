@@ -9,6 +9,9 @@ Adds keybining to change focused to the first empty tag available or move focuse
 ### [Focus Used Tag](https://github.com/andrmantz/custom_dwm_patches/tree/main/focusUsedTag)
 Adds keybindings to shift view to the next or previous available tag.
 
+### [Find Active App](https://github.com/andrmantz/custom_dwm_patches/tree/main/FindClient)
+Adds keybinding to shift view to the tag the **App** is active.
+
 ## Installation
 The main way to patch dwm is
 * Download the .diff file in the dwm directory
