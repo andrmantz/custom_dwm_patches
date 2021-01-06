@@ -4,7 +4,7 @@ This repo holds some simple dwm patches/functions I wrote and keep using on dail
 
 ## Patches
 ### [Focus Empty Tag](https://github.com/andrmantz/custom_dwm_patches/tree/main/focusEmptyTag)
-Adds keybining to change focused to the first empty tag available or move focused client to that.
+Adds keybinding to change focused to the first empty tag available or move focused client to that.
 
 ### [Focus Used Tag](https://github.com/andrmantz/custom_dwm_patches/tree/main/focusUsedTag)
 Adds keybindings to shift view to the next or previous available tag.
