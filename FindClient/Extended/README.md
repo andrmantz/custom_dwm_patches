@@ -1,5 +1,5 @@
 # Find Client Extended
-Pretty much the same as the [Standard Version](), but in case the app isn't running, it will launch it in a new tag and toggle
+Pretty much the same as the [Standard Version](https://github.com/andrmantz/custom_dwm_patches/tree/main/FindClient/Standard), but in case the app isn't running, it will launch it in a new tag and toggle
 the view to that.
 
 ## Matches
@@ -38,9 +38,15 @@ static Key keys[] = {
 ```
 
 ## Installation
-* If you already have the [Standard Version]() installed, you have to download the 
-[dwm-findclientV2-20210104.diff]() file and apply it via  the `patch < dwm-findclientV2-20210104.diff`
+* If you already have the [Standard Version](https://github.com/andrmantz/custom_dwm_patches/tree/main/FindClient/Standard) installed, you have to download the 
+[dwm-findclientV2-20210104.diff](https://github.com/andrmantz/custom_dwm_patches/edit/main/FindClient/Extended/dwm-findclientV2-20210104.diff) file and apply it via  the `patch < dwm-findclientV2-20210104.diff`
 command.
+<<<<<<< HEAD
 * Otherwise, you can either download [dwm-findclientV2-20210104.diff]() file and apply it, or
 download **findclients.c**, copy it to your dwm directory ,add `#include "findclients.c"` on the top
 of your **config.h** file and create the Match array manually.
+=======
+* Otherwise, you can either download [dwm-findclientExtended-20210104.diff](https://github.com/andrmantz/custom_dwm_patches/edit/main/FindClient/Extended/dwm-findclientExtended-20210104.diff) file and apply it, or
+download **findclients.c**, copy it to your dwm directory and add `#include "findclients.c"` on the top
+of your **config.h** file.
+>>>>>>> 939a8043b8b321ca751a3f518d34ab7fb331d405
