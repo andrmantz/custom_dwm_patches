@@ -1,0 +1,55 @@
+diff --git a/config.def.h b/config.def.h
+index 1c0b587..0853b63 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -66,6 +66,8 @@ static Key keys[] = {
+ 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+ 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+ 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
++	{ MODKEY,                       XK_x,      focusemptytag,  {.i = +1 } },
++	{ MODKEY|ShiftMask,             XK_x,      focusemptytag,  {.i = -1 } },
+ 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+ 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+ 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+diff --git a/dwm.c b/dwm.c
+index 4465af1..c34ac95 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -166,6 +166,7 @@ static void drawbars(void);
+ static void enternotify(XEvent *e);
+ static void expose(XEvent *e);
+ static void focus(Client *c);
++static void focusemptytag(const Arg *arg);
+ static void focusin(XEvent *e);
+ static void focusmon(const Arg *arg);
+ static void focusstack(const Arg *arg);
+@@ -805,6 +806,28 @@ focus(Client *c)
+ 	drawbars();
+ }
+ 
++void
++focusemptytag(const Arg *arg)
++{
++  Client *c;
++  unsigned int i, occ=0;
++  Arg shiftit;
++  for (c = selmon->clients; c; c = c->next)
++    occ |= c->tags == 255 ? 0 : c->tags;
++
++  for (i = 0; i < LENGTH(tags); i++){ 
++    if (!(occ & 1 << i ))
++      break;
++    if (i==LENGTH(tags)-1)
++      return;
++  }
++  shiftit.ui = 1 << i;
++  if (arg-> i == 1)
++    view(&shiftit);
++  else if (arg->i == -1)
++    tag(&shiftit);
++  return;
++}
++
+ /* there are some broken focus acquiring clients needing extra handling */
+ void
+ focusin(XEvent *e)
