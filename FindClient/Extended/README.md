@@ -49,4 +49,3 @@ of your **config.h** file and create the Match array manually.
 * Otherwise, you can either download [dwm-findclientExtended-20210104.diff](https://github.com/andrmantz/custom_dwm_patches/edit/main/FindClient/Extended/dwm-findclientExtended-20210104.diff) file and apply it, or
 download **findclients.c**, copy it to your dwm directory, add `#include "findclients.c"` on the top
 of your **config.h** file and create the Match array manually.
->>>>>>> 939a8043b8b321ca751a3f518d34ab7fb331d405
